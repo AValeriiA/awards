@@ -1,0 +1,11 @@
+/!
+/build
+.idea
+*.ipr
+*.iws
+*.iml
+.DS_Store
+npm-debug.log
+node_modules
+plugins
+bower_components

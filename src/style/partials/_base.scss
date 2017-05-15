@@ -1,0 +1,90 @@
+/*color*/
+$header__color: #221f1f;
+$footer__color: #231f20;
+$primary__color: #808083;
+/*end color*/
+
+/*font*/
+$roboto__font: 'Roboto', sans-serif;
+$header__font: 'Titillium Web', sans-serif;
+/*end font*/
+
+* {
+  outline: none !important;
+}
+
+body {
+  font-size: 14px;
+}
+
+.b-header {
+  color: #203970;
+  position: relative;
+  margin-bottom: 47px;
+
+  @media(max-width: 1024px) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-height: 700px) {
+    margin-bottom: 20px;
+  }
+
+  &.light {
+    color: #fff;
+  }
+
+  &__txt {
+    margin: 0;
+    font-size: 30px;
+  }
+}
+
+.b-header2 {
+  position: relative;
+  margin-bottom: 17px;
+
+  &__txt {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.b-sub__header {
+  margin-bottom: 50px;
+
+  &-txt {
+    margin: 0;
+    color: #999;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+
+.block {
+  display: block;
+}
+.bold {
+  font-weight: bold;
+}
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+.unstyled-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.w-clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media(max-width: 767px) {
+  .img-responsive {
+    margin: 0 auto;
+  }
+}
