@@ -14,52 +14,26 @@ $header__font: 'Titillium Web', sans-serif;
 }
 
 body {
-  font-size: 14px;
+  font-size: 16px;
+  color: $primary__color;
+  font-family: $roboto__font;
 }
 
 .b-header {
-  color: #203970;
-  position: relative;
-  margin-bottom: 47px;
-
-  @media(max-width: 1024px) {
-    margin-bottom: 20px;
-  }
-
-  @media (max-height: 700px) {
-    margin-bottom: 20px;
-  }
-
-  &.light {
-    color: #fff;
-  }
-
-  &__txt {
-    margin: 0;
-    font-size: 30px;
-  }
-}
-
-.b-header2 {
-  position: relative;
-  margin-bottom: 17px;
-
-  &__txt {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-  }
+  font-size: 32px;
+  font-weight: 600;
+  color: $header__color;
+  text-transform: uppercase;
+  font-family: $header__font;
+  margin:0 0 70px;
 }
 
 .b-sub__header {
-  margin-bottom: 50px;
-
-  &-txt {
-    margin: 0;
-    color: #999;
-    font-size: 24px;
-    font-weight: bold;
-  }
+  font-size: 18px;
+  font-weight:600;
+  color: $header__color;
+  text-transform: uppercase;
+  margin:0 0 30px;
 }
 
 

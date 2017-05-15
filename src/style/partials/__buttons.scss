@@ -1,0 +1,29 @@
+.b-btn {
+  border:none;
+  display: flex;
+  font-size: 20px;
+  border-radius: 0;
+  padding:15px 30px;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  justify-content: space-between;
+  font-family: $header__font;
+  
+  &.dark__theme {
+    color: #fff;
+    background-color: #000;
+  }
+}
+.b-btn__default {
+  color: #fff;
+  border-radius: 0;
+  margin-bottom:44px;
+  background-color: #959595;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #808080;
+  }
+}

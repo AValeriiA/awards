@@ -1,6 +1,16 @@
-///* Third Party libs*/
-//@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
-///*icon-font*/
-////@import "../fonts/icon-fonts/style.css";
-///* Custom */
-//@import "partials/_base";
+/* Third Party libs*/
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/*icon-font*/
+//@import "../fonts/icon-fonts/style.css";
+
+
+/* Custom */
+@import "partials/_base";
+@import "partials/__buttons";
+@import "partials/__dropdown";
+
+
+@import "partials/_landing";
+@import "partials/_layout";
+@import "partials/_main";

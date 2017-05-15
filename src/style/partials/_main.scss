@@ -1,0 +1,53 @@
+.b-content {
+  padding:0 30px;
+  min-height: 100vh;
+  //outline: 1px solid red!important;
+}
+.b-faq {
+  margin-bottom:40px;
+}
+.b-link {
+  color: $footer__color;
+  text-decoration: underline;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+.b-media {
+  margin-bottom: 30px;
+}
+
+
+.w-faq {
+
+}
+.w-section {
+  counter-reset: count;
+
+  .b-header {
+    counter-increment: count;
+  }
+
+  .b-header:before {
+    content: counter(count) '.';
+  }
+}
+.w-sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .item {
+    margin-bottom: 35px;
+    width: calc((100% - 25px*2)/ 3);
+  }
+}
+.w-text {
+  margin-bottom: 50px;
+
+  p + p {
+    margin-top:30px;
+  }
+}
