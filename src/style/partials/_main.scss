@@ -1,7 +1,11 @@
 .b-content {
-  padding:0 30px;
+  padding:215px 30px;
   min-height: 100vh;
   //outline: 1px solid red!important;
+
+  &.about {
+    padding-top: 50px;
+  }
 }
 .b-faq {
   margin-bottom:40px;
@@ -18,13 +22,44 @@
 .b-media {
   margin-bottom: 30px;
 }
+.b-social {
+  display: flex;
+  align-items: center;
+  margin: 0 -100px 0;
+
+  >li {
+    flex:0 0 33.3333333%;
+    border-left: 1px solid #fff;
+
+    >a {
+      display: flex;
+      background-color: #959595;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      height: 320px;
+    }
+  }
+}
 
 
 .w-faq {
 
 }
+.w-nav {
+  z-index: 1;
+
+  &.active {
+    position: fixed;
+    top:70px;
+  }
+}
 .w-section {
   counter-reset: count;
+
+  .blank__nav {
+    position: absolute;
+  }
 
   .b-header {
     counter-increment: count;

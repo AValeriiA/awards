@@ -29,7 +29,13 @@
   text-transform: uppercase;
   font-family: $header__font;
 
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
   &.right {
+    color: $footer__color;
     left:calc(50%);
     background: rgba(255,255,255,0);
     background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 15%, rgba(255,255,255,0.95) 44%, rgba(255,255,255,1) 100%);
@@ -47,6 +53,17 @@
 }
 .w-header {
   height:100vh;
-  display: flex;
-  position: relative;
+
+  .header__inner {
+    height:100vh;
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+  }
+}
+.w-main {
+  top: 100vh;
+  z-index: 4;
+  position: absolute;
 }
