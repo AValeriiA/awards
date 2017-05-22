@@ -12,7 +12,6 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass": "^3.3.6",
-    "ScrollToFixed": "^1.0.8"
+    "bootstrap-sass": "^3.3.6"
   }
 }

@@ -1,10 +1,9 @@
 .b-content {
-  padding:215px 30px;
   min-height: 100vh;
-  //outline: 1px solid red!important;
+  padding:150px 30px 0;
 
   &.about {
-    padding-top: 50px;
+    padding-top: 115px;
   }
 }
 .b-faq {
@@ -46,12 +45,20 @@
 .w-faq {
 
 }
+.w-map {
+  min-height:540px;
+  margin:0 -100px 0;
+}
 .w-nav {
   z-index: 1;
 
   &.active {
+    top: 0;
+    left: 50vw;
     position: fixed;
-    top:70px;
+    padding: 70px 70px 0;
+    background-color: #fff;
+    width: calc(100% - 50vw - 17px)!important;
   }
 }
 .w-section {

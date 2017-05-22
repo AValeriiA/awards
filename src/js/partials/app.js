@@ -1,116 +1,188 @@
-;(function($) {
-    // $('#rigth__menu').scrollToFixed();
-})(jQuery);
-
-
-$(document).ready(function() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        var $mobile = true;
+var right__sections = [
+    {
+        title: 'about',
+        hash: 'about'
+    },
+    {
+        title: 'categories & prizes',
+        hash: 'categories'
+    },
+    {
+        title: 'entry requirements',
+        hash: 'entry'
+    },
+    {
+        title: 'jury',
+        hash: 'jury'
+    },
+    {
+        title: 'exhibition',
+        hash: 'exhibition'
+    },
+    {
+        title: 'press & news',
+        hash: 'press'
+    },
+    {
+        title: 'organisers',
+        hash: 'organisers'
+    },
+    {
+        title: 'sponsors',
+        hash: '_sponsors'
+    },
+    {
+        title: 'contact',
+        hash: 'contact'
+    },
+    {
+        title: 'frequently asked questions',
+        hash: 'faq'
     }
-    else {
-        var $mobile = false;
+];
+var currentSection = 0;
+
+function initLink() {
+    renderLink();
+}
+
+function renderLink() {
+    if (currentSection < right__sections.length) {
+        $('#right__link .text').text(right__sections[currentSection].title);
+        $('#right__link').attr('href', '#' + right__sections[currentSection].hash);
     }
+}
 
-    $('.blank__nav').height($('#rigth__menu').outerHeight(true));
+function nextSection() {
+    currentSection++;
+    renderLink();
+}
+initLink();
 
-    // $(document).on('touchmove', function() { //touchmove works for iOS, I don't know if Android supports it
-    //     $(document).trigger('wheel');
-    // });
+function checkArticleName(columnName) {
+    var name = $('#' + columnName + ' article')
+        .filter(":onScreen")
+        .attr('id');
 
-    $(window).scroll( function() {
+    return name;
+}
+
+(function($) {
+    $('#right__link').click(function(e) {
+        e.preventDefault();
         var $header = $('.w-header');
 
-        if($(window).scrollTop() > $header.outerHeight()) {
-            $('body').css('overflow', 'hidden');
-            $('.w-section').addClass('scrolling');
+        if($(window).scrollTop() < $header.outerHeight()) {
+            $('html, body').animate({
+                scrollTop: $('.w-header').outerHeight(true) + 10
+            }, 400);
+            nextSection();
+        } else {
 
-            var menu__width = $('.w-section .right').width();
+            var target = $(this).attr('href');
+            var topHeight = parseInt($('main').css('top'));
+            var topPadding = parseInt($('main section article').css('padding-top'));
+            var parsedTopHeight = topHeight + topPadding - 50;
+            var top = $("#right").scrollTop() + $(target).offset().top - parsedTopHeight;
 
-            $('.w-nav').addClass('active');
-            $('.w-nav').css('width', (menu__width - 140));
+            $('#right').animate({
+                scrollTop: parseInt(top)
+            }, 400);
+
+            nextSection();
         }
     });
 
-    $('.w-section').scroll( function() {
-        if($(this).scrollTop() <= 0) {
-            $('body').css('overflow', 'auto');
-            $('.w-section').removeClass('scrolling');
-            $('.w-nav').removeClass('active');
-            // $('.w-section').scrollTop(0);
-        }
+    $(document).ready(function() {
+        // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        //     var $mobile = true;
+        // }
+        // else {
+        //     var $mobile = false;
+        // }
+
+
+        // $(document).on('touchmove', function() { //touchmove works for iOS, I don't know if Android supports it
+        //     $(document).trigger('wheel');
+        // });
+
+        $(window).scroll( function() {
+            var $header = $('.w-header');
+
+            if($(window).scrollTop() > $header.outerHeight()) {
+                $('body').css('overflow', 'hidden');
+                $('.w-section').addClass('scrolling');
+
+                var menu__width = $('.w-section .right').width();
+
+                $('.w-nav').addClass('active');
+                $('.w-nav').css('width', (menu__width - 140));
+            }
+        });
+
+        $('.w-section').scroll( function() {
+            if($(this).scrollTop() <= 0) {
+                $('body').css('overflow', 'auto');
+                $('.w-section').removeClass('scrolling');
+                $('.w-nav').removeClass('active');
+                $('.w-section').scrollTop(0);
+
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 400);
+            }
+
+            if($('#faq:onScreen').length) {
+                $('#right__link').hide();
+            } else {
+                $('#right__link').show();
+            }
+
+            function updateLinkOnScroll() {
+                var name = checkArticleName('right');
+                var index = _.findIndex(right__sections, {'hash' : name}) + 1;
+                currentSection = index - 1;
+
+                console.log('name', name);
+                console.log('index', index);
+
+                if(index < right__sections.length) {
+                    $('#right__link .text').text(right__sections[index].title);
+                    $('#right__link').attr('href', '#' + right__sections[index].hash);
+                }
+
+                if(index === 1) {
+                    $('#right__link .text').text(right__sections[index - 1].title);
+                    $('#right__link').attr('href', '#' + right__sections[index - 1].hash);
+                }
+
+            }
+
+            updateLinkOnScroll();
+        });
+
+        $('.scroller').click(function() {
+            var target = $(this.hash);
+            var topHeight = parseInt($('main').css('top'));
+            var topPadding = parseInt($('main section article').css('padding-top'));
+            var parsedTopHeight = topHeight + topPadding - 50;
+            var place = $(this).data('place');
+            var section = 'section#' + place;
+
+            $('.b-dropdown__menu').dropdown('toggle');
+
+            if (target.length) {
+                // console.log($('main section article:first-of-type').css('padding-top'));
+                var top = $(section).scrollTop() + $(target).offset().top - parsedTopHeight;
+                // console.log(top);
+
+                $(section).animate({
+                    scrollTop: top
+                }, 400);
+                return false;
+            }
+        });
     });
 
+})(jQuery);
 
-
-    $('.scroller').click(function() {
-        var target = $(this.hash);
-        var topHeight = parseInt($('main').css('top'));
-        var topPadding = parseInt($('main section article').css('padding-top'));
-        var parsedTopHeight = topHeight + topPadding - 50;
-        var place = $(this).data('place');
-        var section = 'section#' + place;
-
-        $('.b-dropdown__menu').dropdown('toggle');
-
-        if (target.length) {
-            // console.log($('main section article:first-of-type').css('padding-top'));
-            var top = $(section).scrollTop() + $(target).offset().top - parsedTopHeight;
-            console.log(top);
-
-            $(section).animate({
-                scrollTop: top
-            }, 800);
-            return false;
-        }
-    });
-
-    // $('#apply a').click(function() {
-    //     var targetNY = $('#new-york-apply');
-    //     var targetLondon = $('#london-apply');
-    //     var topHeight = parseInt($('main').css('top'));
-    //     var topPadding = parseInt($('main section article:nth-of-type(2)').css('padding-top'));
-    //     var parsedTopHeight = topHeight + topPadding * 5;
-    //     var title = $('#title').height();
-    //
-    //     // var school = $(this).data('school');
-    //     var sectionNY = 'section#new-york';
-    //     var sectionLondon = 'section#london';
-    //     if (targetNY.length || targetLondon.length) {
-    //         // console.log(topNY, topLondon, parsedTopHeight);
-    //         $('html, body').animate({
-    //             scrollTop: title + 100
-    //         }, 800);
-    //         setTimeout( function() {
-    //             var topNY = $(sectionNY).scrollTop() + $(targetNY).offset().top - parsedTopHeight;
-    //             $(sectionNY).animate({
-    //                 scrollTop: topNY
-    //             }, 800);
-    //         }, 1200);
-    //         setTimeout( function() {
-    //             var topLondon = $(sectionLondon).scrollTop() + $(targetLondon).offset().top - parsedTopHeight;
-    //             $(sectionLondon).animate({
-    //                 scrollTop: topLondon
-    //             }, 800);
-    //         }, 1200);
-    //         return false;
-    //     }
-    // });
-
-
-    // $(function() {
-    //     $("menu li a:contains('past')").html('past years');
-    //     $("menu#new-york li a:contains('programme')").html('program');
-    //     $("section#new-york .label:contains('programme')").html('program');
-    //     $("section .label:contains('past')").html('past years');
-    // });
-
-
-
-});
-
-// $(window).resize(function(){
-//     $("#title .line").each( function() {
-//         height = $(this).offset().top;
-//         $(this).attr('data-height', height);
-//     });
-// });
