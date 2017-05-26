@@ -21,11 +21,12 @@ body {
 
 .b-header {
   font-size: 32px;
+  margin:0 0 66px;
   font-weight: 600;
   color: $header__color;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
   font-family: $header__font;
-  margin:0 0 70px;
 }
 
 .b-sub__header {

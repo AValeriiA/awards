@@ -14,6 +14,12 @@
     background-color: #000;
   }
 
+  &.light__theme {
+    color: #000;
+    border-color: #000;
+    background-color: #fff;
+  }
+
   &.with__count {
     counter-reset: count;
 

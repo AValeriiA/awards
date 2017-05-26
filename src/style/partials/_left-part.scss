@@ -1,0 +1,139 @@
+.b-alert {
+  font-size: 13px;
+  border-radius: 0;
+  padding: 25px 30px;
+  letter-spacing: 1px;
+  font-family: $header__font;
+
+  &.alert-success {
+    color: #fff;
+    border-color: #16945a;
+    background-color: #16945a;
+  }
+}
+.b-header__accordion {
+  color: #fff;
+  width: 100%;
+  font-size: 18px;
+  padding:9px 30px;
+  text-transform: uppercase;
+  background-color: #363636;
+  font-family: $header__font;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &[aria-expanded="true"] {
+
+    .caret {
+      transform: rotate(180deg);
+    }
+  }
+
+  .caret {
+    border-top: 7px dashed;
+    border-right: 5.5px solid transparent;
+    border-left: 5.5px solid transparent;
+    transform-origin: center center;
+  }
+
+  .icon {
+    color: #28ae70;
+    font-size: 32px;
+    padding: 0 20px;
+    font-weight: 300;
+    visibility: hidden;
+
+    &.checked {
+      visibility: visible;
+    }
+  }
+
+  .order {
+    font-size: 13px;
+  }
+
+  .text {
+    flex: 1 1 auto;
+    letter-spacing: 2px;
+    padding: 0 15px 0 60px;
+  }
+}
+.b-form__list {
+  margin-bottom: 55px;
+
+  >li + li {
+    margin-top:60px;
+  }
+}
+.b-date__list {
+  font-size: 16px;
+  padding-top: 10px;
+  text-transform: uppercase;
+  font-family: $header__font;
+
+  .date__line {
+    display: flex;
+    position: relative;
+    white-space:nowrap;
+    margin-bottom:14px;
+    align-items: center;
+    justify-content: space-between;
+
+    &.active {
+      color: #fff;
+    }
+
+    &:after {
+      left:0;
+      top:50%;
+      content: '';
+      height:1px;
+      width: 100%;
+      position: absolute;
+      background-color: #707070;
+      transform: translateY(-50%);
+    }
+
+    .text {
+      padding-right: 15px;
+      letter-spacing: 1px;
+    }
+
+    .date {
+      padding-left:15px;
+    }
+
+    .text,
+    .date {
+      z-index:1;
+      background-color: #000;
+    }
+  }
+}
+.b-description__list {
+  color: #959595;
+  font-size: 13px;
+  letter-spacing:1px;
+  padding: 0 0 30px 100px;
+  font-family: $header__font;
+
+  &:first-of-type {
+    padding-top:0;
+  }
+
+  >li + li {
+    margin-top:5px;
+  }
+
+  .active {
+    color: #fff;
+  }
+}

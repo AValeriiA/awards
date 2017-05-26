@@ -9,8 +9,15 @@
 
 	<!--fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Titillium+Web:400,600" rel="stylesheet">
+	<!--icon-fonts-->
+	<link rel="stylesheet" href="fonts/icon-fonts/style.css">
+	<!--flags-->
+	<link rel="stylesheet" href="css/flags.css">
 
-	<!--main style-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+
+    <!--main style-->
 	<link rel="stylesheet" href="css/main.css">
 
 
@@ -32,29 +39,310 @@
 
 <main class="w-main w-clear">
 	<section id="left" class="w-section left">
-		<div id="left__link" class="w-bottom__link left">
+		<a href="#" id="left__link" class="w-bottom__link left">
 			<div class="text">SUBMISSION</div>
 			<div class="icon">&darr;</div>
-		</div><!--w-bottom__link-->
+		</a><!--w-bottom__link-->
 
-        <article class="b-content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deserunt, est ipsam minima molestias porro reiciendis. Aliquam, corporis reiciendis. Aliquid assumenda dolorem error fuga ipsa quod repellendus unde voluptas voluptatum.
-        </article>
+		<nav class="w-nav" id="left__menu">
+			<div class="dropdown">
+				<button class="b-btn light__theme btn-block" type="button" data-toggle="dropdown">
+					Submission
+					<span class="icon">&darr;</span>
+				</button>
+				<ol class="b-dropdown__menu with__count light__theme dropdown-menu">
+					<li><a data-place="left" class="scroller" href="#submission">SUBMISSION GUIDELINES</a></li>
+					<li><a data-place="left" class="scroller" href="#create">CREATE ENTRY</a></li>
+				</ol><!--b-dropdown__menu-->
+			</div>
+		</nav><!--w-nav-->
 
-        <article class="b-content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur assumenda culpa deserunt id, minus molestias possimus ratione rem voluptate! A corporis, doloribus eius hic laborum molestiae numquam possimus rem.
-        </article>
-	</section>
+		<article id="submission" class="b-content small__padding">
+			<img class="b-media img-responsive" src="/img/temp2.jpg" alt="">
+
+			<ul class="b-date__list unstyled-list">
+				<li class="date__line active">
+					<div class="text">call for entry</div>
+
+					<div class="date">24/03/2017 — 01/05/2017</div>
+				</li>
+
+				<li class="date__line">
+					<div class="text">judging week</div>
+
+					<div class="date">03/05/2017 — 10/06/2017</div>
+				</li>
+				<li class="date__line">
+					<div class="text">FINALISTS ANNOUNCED</div>
+
+					<div class="date">11/06/2017 — 24/06/2017</div>
+				</li>
+				<li class="date__line">
+					<div class="text">Awards Night</div>
+
+					<div class="date">29/06/2017 — 30/06/2017</div>
+				</li>
+				<li class="date__line">
+					<div class="text">EXHIBITION SHOWCASE</div>
+
+					<div class="date">03/07/2017 — 16/07/2017</div>
+				</li>
+			</ul>
+		</article><!--b-content-->
+
+		<article id="submission__guidelines" class="b-content">
+			<h1 class="b-header">
+				Submission guidelines
+			</h1>
+
+			<h2 class="b-sub__header">
+				CATEGORY SUBMISSION GUIDELINES
+			</h2>
+
+			<div class="w-text">
+				<p>
+					Dolor sit amet, consectetur adipiscing elit. Ut ipsum eros, fringilla dui non, porta pretium sem. Lorem
+					ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus purus, posuere id vehicula et, feugiat sed
+					dui. Cras sit amet nisl at ante facilisis blandit. Nulla tincidunt quam non semper sagittis. Lorem ipsum
+					dolor sit amet, consectetur adipiscing elit. Ut ipsum eros, fringilla dui non, porta pretium sem.
+				</p>
+			</div><!--w-text-->
+
+			<h2 class="b-sub__header">
+				image submission guideLINES
+			</h2>
+
+			<div class="w-text">
+				<p>
+					Dolor sit amet, consectetur adipiscing elit. Ut ipsum eros, fringilla dui non, porta pretium sem. Lorem
+					ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus purus, posuere id vehicula et, feugiat sed
+					dui. Cras sit amet nisl at ante facilisis blandit. Nulla tincidunt quam non semper sagittis. Lorem ipsum
+					dolor sit amet, consectetur adipiscing elit. Ut ipsum eros, fringilla dui non, porta pretium sem. Lorem
+					ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus purus, posuere id vehicula et, feugiat sed
+					dui. Cras sit amet nisl at ante facilisis blandit.
+				</p>
+
+				<p>
+					Dolor sit amet, consectetur adipiscing elit. Ut ipsum eros, fringilla dui non, porta pretium sem. Lorem
+					ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus purus, posuere id vehicula et, feugiat sed
+					dui. Cras sit amet nisl at ante facilisis blandit. Nulla tincidunt quam non semper sagittis. Lorem ipsum
+					dolor sit amet, consectetur adipiscing elit. Ut ipsum eros, fringilla dui non, porta pretium sem. Lorem
+					ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus purus, posuere id vehicula et, feugiat sed
+					dui. Cras sit amet nisl at ante facilisis blandit.
+				</p>
+
+				<p>
+					Dolor sit amet, consectetur adipiscing elit. Ut ipsum eros, fringilla dui non, porta pretium sem.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. u
+				</p>
+			</div><!--w-text-->
+		</article><!--b-content-->
+
+		<article id="create" class="b-content">
+			<h1 class="b-header">
+				create entry
+			</h1>
+
+			<form class="w-form" id="create__form" novalidate>
+				<ul class="b-form__list unstyled-list" id="form__accordion">
+					<li class="">
+						<a class="b-header__accordion" role="button" data-toggle="collapse" href="#category">
+							<span class="order">A</span>
+							<span class="text">Select A Category</span>
+							<span class="icon icon-checkmark"></span>
+							<span class="caret"></span>
+						</a>
+
+						<div id="category" class="collapse">
+							<ul class="unstyled-list">
+								<li class="w-form__group">
+                                    <select id="submission__category" name="submission__category">
+										<option value=""></option>
+										<option value="1">Category 1</option>
+										<option value="2">Category 2</option>
+										<option value="3">Category 3</option>
+										<option value="4">Category 4</option>
+									</select>
+                                </li>
+
+								<li class="w-form__group">
+                                    <select id="submission__type" name="submission__type">
+										<option value=""></option>
+										<option value="1">TYPE OF ENTRY 1</option>
+										<option value="1">TYPE OF ENTRY 2</option>
+										<option value="1">TYPE OF ENTRY 3</option>
+										<option value="1">TYPE OF ENTRY 4</option>
+									</select>
+                                </li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="">
+						<a class="b-header__accordion" role="button" data-toggle="collapse" href="#information">
+							<span class="order">b</span>
+							<span class="text">Entry Information</span>
+							<span class="icon icon-checkmark"></span>
+							<span class="caret"></span>
+						</a>
+
+						<div id="information" class="collapse">
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">b1</div>
+									<input type="text" class="b-input" id="title" name="title" placeholder="TITLE OF WORK *">
+								</div><!--w-input-->
+							</div>
+
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">b2</div>
+									<textarea class="b-input b-textarea" id="description" name="description"
+											  placeholder="ENTRY DESCRIPTION OF 250 WORDS *"></textarea>
+								</div><!--w-input-->
+							</div>
+
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">b3</div>
+									<input type="text" class="b-input" id="company__name" name="company__name" placeholder="CLIENT COMPANY">
+								</div><!--w-input-->
+							</div>
+
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">b4</div>
+									<input type="url" class="b-input" id="url" name="url" placeholder="CLIENT URL">
+								</div><!--w-input-->
+							</div>
+						</div><!--collapse-->
+					</li>
+
+					<li class="">
+						<a class="b-header__accordion" role="button" data-toggle="collapse" href="#contacts">
+							<span class="order">c</span>
+							<span class="text">Contact Details</span>
+							<span class="icon icon-checkmark"></span>
+							<span class="caret"></span>
+						</a>
+
+						<div id="contacts" class="collapse">
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">c1</div>
+									<input type="text" class="b-input" id="first__name" name="first__name" placeholder="FIRST NAME">
+								</div><!--w-input-->
+							</div>
+
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">c2</div>
+									<input type="text" class="b-input" id="last__name" name="last__name" placeholder="LAST NAME">
+								</div><!--w-input-->
+							</div>
+
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">c3</div>
+									<input type="email" class="b-input" id="email" name="email" placeholder="email">
+								</div><!--w-input-->
+							</div>
+
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">c3</div>
+									<input type="text" class="b-input" id="number" name="number" placeholder="CONTACT NUMBER">
+								</div><!--w-input-->
+							</div>
+						</div><!--collapse-->
+					</li>
+
+					<li class="">
+						<a class="b-header__accordion" role="button" data-toggle="collapse" href="#credits">
+							<span class="order">d</span>
+							<span class="text">Credits</span>
+							<span class="icon icon-checkmark"></span>
+							<span class="caret"></span>
+						</a>
+
+						<div id="credits" class="collapse">
+                            <ul class="b-description__list unstyled-list">
+                                <li>* THIS IS HOW YOU WILL BE CREDITED ONLINE, ON SCREEN, IN PRINT, ETC</li>
+                                <li class="active">— NAME OF PHOTOGRAPHER / COUNTRY</li>
+                            </ul>
+
+							<div class="w-form__group">
+								<div class="w-input">
+									<div class="order">d1</div>
+									<input type="text" class="b-input" id="photographer__name" name="photographer__name"
+										   placeholder="NAME OF PHOTOGRAPHER">
+								</div><!--w-input-->
+							</div>
+
+                            <div class="w-form__group">
+								<select id="country" name="country">
+									<option value=""></option>
+								</select>
+                            </div>
+						</div><!--collapse-->
+					</li>
+
+                    <li class="">
+                        <a class="b-header__accordion" role="button" data-toggle="collapse" href="#upload">
+                            <span class="order">e</span>
+                            <span class="text">Upload Your Work</span>
+                            <span class="icon icon-checkmark"></span>
+                            <span class="caret"></span>
+                        </a>
+
+                        <div id="upload" class="collapse">
+                            <ul class="b-description__list unstyled-list">
+                                <li class="active">* FOR SINGLE IMAGE OR SERIES SUBMISSION</li>
+                                <li class="">• ZIP FILE SIZE SHOULD NOT EXCEED 200MB</li>
+                            </ul>
+
+                            <div class="w-form__group">
+                                <div class="w-input file__upload">
+                                    <div class="order">e1</div>
+                                    <div class="file__text">SELECT FILE TO UPLOAD</div>
+                                    <input id="file__upload" name="file__upload" type="file" class="b-input">
+
+                                    <i class="icon icon-file_upload"></i>
+                                </div><!--w-input-->
+                            </div>
+
+                            <ul class="b-description__list unstyled-list">
+                                <li class="active">* FOR VIDEO SUBMISSION</li>
+                            </ul>
+
+                            <div class="w-form__group">
+                                <div class="w-input">
+                                    <div class="order">e2</div>
+                                    <input type="text" class="b-input" id="video__url" name="video__url" placeholder="ENTER VIDEO URL">
+                                </div><!--w-input-->
+                            </div>
+                        </div><!--collapse-->
+                    </li>
+				</ul>
+
+                <button class="b-btn__default btn btn-block" type="submit">CONFIRM TO SUBMIT</button>
+			</form><!--w-form-->
+
+            <div class="b-alert alert alert-success" role="alert">
+                <p>YOUR ENTRY SUBMISSION IS SUCCESSFUL</p>
+                <p>OUR ORGANIZERS WILL GET BACK TO YOU SHOULD THERE BE ANY PROBLEMS WITH YOUR ENTRY</p>
+                <p>RESULTS WILL BE ANNOUNCED ON 11/06/2017</p>
+            </div>
+        </article><!--b-content-->
+	</section><!--w-section-->
 
 	<section id="right" class="w-section right">
-		<!--<div class="blank__nav"></div>-->
-
 		<a href="#" id="right__link" class="w-bottom__link right">
 			<div class="text">About</div>
 			<div class="icon">&darr;</div>
 		</a><!--w-bottom__link-->
 
-		<nav class="w-nav" id="rigth__menu">
+		<nav class="w-nav" id="right__menu">
 			<div class="dropdown">
 				<button class="b-btn dark__theme btn-block" type="button" data-toggle="dropdown">
 					About
@@ -74,8 +362,8 @@
 			</div>
 		</nav><!--w-nav-->
 
-		<article id="about" class="b-content about">
-			<img class="b-media img-responsive" src="./img/temp.jpg" alt="">
+		<article id="about" class="b-content small__padding">
+			<img class="b-media img-responsive" src="/img/temp.jpg" alt="">
 
 			<div class="w-text">
 				<p>
@@ -447,8 +735,13 @@
         });
     }
 </script>
+
+
+<script src="js/libs.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&callback=initMap"></script>
 <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

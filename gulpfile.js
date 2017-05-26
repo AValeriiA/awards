@@ -12,6 +12,7 @@ var rimraf = require('rimraf');
 var browserSync = require("browser-sync");
 var reload = browserSync.reload;
 var rigger = require('gulp-rigger');
+var rename = require('gulp-rename');
 
 var path = {
     build: {
@@ -23,7 +24,7 @@ var path = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/main.js',
+        js: 'src/js/*.js',
         style: 'src/style/main.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -87,6 +88,17 @@ gulp.task('image:build', function () {
     return gulp.src(path.src.img)
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({stream: true}));
+});
+
+gulp.task('flags:style', function () {
+    return gulp.src('bower_components/flag-icon-css/css/flag-icon.min.css')
+        .pipe(rename('flags.css'))
+        .pipe(gulp.dest(path.build.css));
+});
+
+gulp.task('flags:img', function () {
+    return gulp.src('bower_components/flag-icon-css/flags/**/*.*')
+        .pipe(gulp.dest('build/flags'));
 });
 
 /*gulp.task('image:build', function () {
